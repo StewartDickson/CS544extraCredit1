@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import edu.mum.cs544.domain.Resource;
 
 @Repository
-public interface ResouceDAO extends JpaRepository<Resource, String> {
+public interface ResourceDAO extends JpaRepository<Resource, String> {
 
 	Resource save(Resource resource);
 	
