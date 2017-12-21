@@ -1,5 +1,6 @@
 package edu.mum.cs544.domain;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Project {
@@ -10,7 +11,7 @@ public class Project {
 	
 	private TimeFrame timeFrame;
 	
-	private List<Task> taskList;
+	private List<Task> taskList = new LinkedList<Task>();
 
 	public String getDescription() {
 		return description;
@@ -44,6 +45,18 @@ public class Project {
 		this.taskList = taskList;
 	}
 	
+	public void addTask(Task task) {
+		this.taskList.add(task);
+	}
 	
+	public Status getStatus() {
+		Status retStat = Status.INCOMPLETE;
+		for(Task task : this.taskList) {
+			if(task.getStatus() != Status.COMPLETE) {
+				return Status.INCOMPLETE;
+			}
+		}
+		return Status.COMPLETE;
+	}
 
 }

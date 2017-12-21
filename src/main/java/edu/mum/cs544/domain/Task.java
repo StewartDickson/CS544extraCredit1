@@ -8,7 +8,7 @@ public class Task {
 	
 	private TimeFrame timeFrame;
 	
-	private Status status;
+	private Status status = Status.INCOMPLETE;
 	
 	private List<Resource> resources;
 
